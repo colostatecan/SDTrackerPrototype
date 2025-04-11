@@ -21,13 +21,20 @@
       shippingPreference: document.getElementById("shippingPreference").value
     };
 
-    fetch("YOUR_WEB_APP_URL", {
+    fetch("https://script.google.com/macros/s/AKfycby_3wBpQufgKSl14jCKCpfQTms4QY0mREJlCAJSUwCPZAKvcpnzpTpjRSTMc9TIuX_3/exec", {
       method: "POST",
       body: JSON.stringify(data),
       headers: {
         "Content-Type": "application/json"
       }
-    })
+   <input type="text" id="teamName" placeholder="Team Name" required />
+<input type="text" id="studentName" placeholder="Student Name" required />
+<input type="text" id="itemDescription" placeholder="Item Description" required />
+<input type="url" id="vendorLink" placeholder="Vendor Link" required />
+<input type="number" id="estimatedCost" placeholder="Estimated Cost" required />
+<input type="text" id="shippingPreference" placeholder="Shipping Preference" required />
+<button onclick="submitForm()">Submit Request</button>
+ })
     .then(response => response.text())
     .then(result => {
       alert("Request submitted successfully!");
